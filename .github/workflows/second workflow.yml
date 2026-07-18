@@ -11,15 +11,15 @@ jobs:
   test:
     needs: lint
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Run tests
-        run: echo "Running tests..."
+      steps:
+        - uses: actions/checkout@v3
+        - name: Run tests
+          run: echo "Running tests..."
 jobs:
   build:
     needs: test
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Build project
-        run: echo "Building project..."  
+      steps:
+        - uses: actions/checkout@v3
+        - name: Build project
+          run: echo "Building project..."    
