@@ -1,4 +1,4 @@
-name: fifth workflow
+name: fifth-workflow
 
 on:
   workflow_dispatch:
