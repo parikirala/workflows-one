@@ -1,0 +1,22 @@
+name: Job Outputs
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    outputs:
+      image_tag: ${{ steps.image.outputs.tag }}
+
+    steps:
+      - id: image
+        run: echo "tag=v2.5.1" >> $GITHUB_OUTPUT
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - run: echo "Deploying ${{ needs.build.outputs.image_tag }}"
