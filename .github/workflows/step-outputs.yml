@@ -1,0 +1,16 @@
+name: Step Outputs
+
+on:
+  workflow_dispatch:
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set Output
+        id: version
+        run: echo "app_version=1.0.0" >> $GITHUB_OUTPUT
+
+      - name: Read Output
+        run: echo "Version is ${{ steps.version.outputs.app_version }}"
